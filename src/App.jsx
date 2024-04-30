@@ -30,7 +30,8 @@ export default function App() {
 
   function handelChangedStatus(item) {
    const newStatus = notes.map((note)=>(item===note.id ? {...note,completed:!note.completed} : note));
-   setNotes(newStatus);
+   //setNotes(newStatus);
+   dispatch({type:"complete",payload:newStatus})
   }
 
   let sortedNotes = notes;
