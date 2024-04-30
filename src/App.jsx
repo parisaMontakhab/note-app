@@ -38,7 +38,7 @@ export default function App() {
   function handelRemoveNote(item) {
     //const newfiltered = notes.filter((a) => a.id !== item);
    // setNotes(newfiltered);
-   dispatch({type:"delete",payload:id})
+   dispatch({type:"delete",payload:item})
   }
 
   function handelChangedStatus(item) {
