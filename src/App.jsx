@@ -5,9 +5,16 @@ import { useReducer, useState } from "react";
 import NoteStatus from "./assets/components/NoteStatus";
 import NoteHeader from "./assets/components/NoteHeader";
 
+
+function notesReducer(){
+  
+}
+
+
+
 export default function App() {
   //const [notes, setNotes] = useState([]);
-  const [state,dispatch] = useReducer(()=>{},[]);
+  const [state,dispatch] = useReducer(notesReducer,[]);
   const [sortBy,setSortBy] = useState("latest");
 
   function addNewNote(newNote) {
