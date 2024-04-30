@@ -6,8 +6,8 @@ import NoteStatus from "./assets/components/NoteStatus";
 import NoteHeader from "./assets/components/NoteHeader";
 
 
-function notesReducer(){
-  
+function notesReducer(state,action){
+
 }
 
 
