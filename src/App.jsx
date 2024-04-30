@@ -7,7 +7,14 @@ import NoteHeader from "./assets/components/NoteHeader";
 
 
 function notesReducer(state,action){
+switch (key) {
+  case value:
+    
+    break;
 
+  default:
+    break;
+}
 }
 
 
@@ -28,10 +35,11 @@ export default function App() {
    dispatch({type:"delete",payload:id})
   }
 
-  function handelChangedStatus(item) {
-   const newStatus = notes.map((note)=>(item===note.id ? {...note,completed:!note.completed} : note));
+  function handelChangedStatus(e) {
+    const noteId = Number(e.target.value)
+   //const newStatus = notes.map((note)=>(item===note.id ? {...note,completed:!note.completed} : note));
    //setNotes(newStatus);
-   dispatch({type:"complete",payload:newStatus})
+   dispatch({type:"complete",payload:noteId})
   }
 
   let sortedNotes = notes;
