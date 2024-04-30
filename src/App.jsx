@@ -1,12 +1,13 @@
 import "./App.css";
 import AddNote from "./assets/components/AddNote";
 import NoteList from "./assets/components/NoteList";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import NoteStatus from "./assets/components/NoteStatus";
 import NoteHeader from "./assets/components/NoteHeader";
 
 export default function App() {
-  const [notes, setNotes] = useState([]);
+  //const [notes, setNotes] = useState([]);
+  const [state,dispatch] = useReducer(()=>{},[]);
   const [sortBy,setSortBy] = useState("latest");
 
   function addNewNote(newNote) {
