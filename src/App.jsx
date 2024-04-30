@@ -17,7 +17,8 @@ switch (action.type) {
   case "complete" :{
     return state.map((note)=> note.id === action.payload ?{...note,completed:!note.completed} : note)
   }
-    
+    default:
+      throw new Error("unknown Error" + action.type);
   
 }
 }
@@ -26,7 +27,7 @@ switch (action.type) {
 
 export default function App() {
   //const [notes, setNotes] = useState([]);
-  const [state,dispatch] = useReducer(notesReducer,[]);
+  const [notes,dispatch] = useReducer(notesReducer,[]);
   const [sortBy,setSortBy] = useState("latest");
 
   function addNewNote(newNote) {
@@ -40,11 +41,11 @@ export default function App() {
    dispatch({type:"delete",payload:id})
   }
 
-  function handelChangedStatus(e) {
-    const noteId = Number(e.target.value)
+  function handelChangedStatus(item) {
+    //const noteId = Number(e.target.value)
    //const newStatus = notes.map((note)=>(item===note.id ? {...note,completed:!note.completed} : note));
    //setNotes(newStatus);
-   dispatch({type:"complete",payload:noteId})
+   dispatch({type:"complete",payload:item})
   }
 
   let sortedNotes = notes;
