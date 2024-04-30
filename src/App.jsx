@@ -18,7 +18,8 @@ export default function App() {
   const [sortBy,setSortBy] = useState("latest");
 
   function addNewNote(newNote) {
-    setNotes((prevNote) => [...prevNote, newNote]);
+   // setNotes((prevNote) => [...prevNote, newNote]);
+   dispatch({type:"add",payload:newNote})
   }
 
   function handelRemoveNote(item) {
