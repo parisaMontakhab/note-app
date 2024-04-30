@@ -7,13 +7,18 @@ import NoteHeader from "./assets/components/NoteHeader";
 
 
 function notesReducer(state,action){
-switch (key) {
-  case value:
+switch (action.type) {
+  case "add":{
+    return [...state,action.payload]
+  }
+  case "delete":{
+    return state.filter((s)=> s.id !== action.payload)
+  }
+  case "complete" :{
+    return state.map((note)=> note.id === action.payload ?{...note,completed:!note.completed} : note)
+  }
     
-    break;
-
-  default:
-    break;
+  
 }
 }
 
