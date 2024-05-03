@@ -31,16 +31,16 @@ export default function App() {
  // const [notes,dispatch] = useReducer(notesReducer,[]);
   const [sortBy,setSortBy] = useState("latest");
 
-  function addNewNote(newNote) {
-   // setNotes((prevNote) => [...prevNote, newNote]);
-   dispatch({type:"add",payload:newNote})
-  }
+  // function addNewNote(newNote) {
+  //  // setNotes((prevNote) => [...prevNote, newNote]);
+  //  dispatch({type:"add",payload:newNote})
+  // }
 
-  function handelRemoveNote(item) {
-    //const newfiltered = notes.filter((a) => a.id !== item);
-   // setNotes(newfiltered);
-   dispatch({type:"delete",payload:item})
-  }
+  // function handelRemoveNote(item) {
+  //   //const newfiltered = notes.filter((a) => a.id !== item);
+  //  // setNotes(newfiltered);
+  //  dispatch({type:"delete",payload:item})
+  // }
 
   function handelChangedStatus(item) {
     //const noteId = Number(e.target.value)
@@ -66,15 +66,14 @@ export default function App() {
       <div className="container">
       <NoteHeader  sortBy={sortBy} onSort={(e)=>setSortBy(e.target.value)}/>
       <div className="note-app">
-        <AddNote onAddNewNote={addNewNote} />
+        <AddNote  />
         <div className="note-container">
           <NoteStatus />
           <NoteList
           sortBy ={sortBy}
           setsortBy ={setSortBy}
             //notes={sortedNotes}
-            onDelet={handelRemoveNote}
-            onCompleted={handelChangedStatus}
+           
           />
         </div>
       </div>
