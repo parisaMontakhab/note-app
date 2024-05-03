@@ -4,24 +4,25 @@ import NoteList from "./assets/components/NoteList";
 import { useReducer, useState } from "react";
 import NoteStatus from "./assets/components/NoteStatus";
 import NoteHeader from "./assets/components/NoteHeader";
+import { NotesProvider } from "./context/NotesContext";
 
 
-function notesReducer(state,action){
-switch (action.type) {
-  case "add":{
-    return [...state,action.payload]
-  }
-  case "delete":{
-    return state.filter((s)=> s.id !== action.payload)
-  }
-  case "complete" :{
-    return state.map((note)=> note.id === action.payload ?{...note,completed:!note.completed} : note)
-  }
-    default:
-      throw new Error("unknown Error" + action.type);
+// function notesReducer(state,action){
+// switch (action.type) {
+//   case "add":{
+//     return [...state,action.payload]
+//   }
+//   case "delete":{
+//     return state.filter((s)=> s.id !== action.payload)
+//   }
+//   case "complete" :{
+//     return state.map((note)=> note.id === action.payload ?{...note,completed:!note.completed} : note)
+//   }
+//     default:
+//       throw new Error("unknown Error" + action.type);
   
-}
-}
+// }
+// }
 
 
 
@@ -61,19 +62,22 @@ export default function App() {
   }
 
   return (
-    <div className="container">
-      <NoteHeader notes={notes} sortBy={sortBy} onSort={(e)=>setSortBy(e.target.value)}/>
+    <NotesProvider>
+      <div className="container">
+      <NoteHeader  sortBy={sortBy} onSort={(e)=>setSortBy(e.target.value)}/>
       <div className="note-app">
         <AddNote onAddNewNote={addNewNote} />
         <div className="note-container">
-          <NoteStatus notes={notes}/>
+          <NoteStatus />
           <NoteList
-            notes={sortedNotes}
+            //notes={sortedNotes}
             onDelet={handelRemoveNote}
             onCompleted={handelChangedStatus}
           />
         </div>
       </div>
     </div>
+    </NotesProvider>
+    
   );
 }
