@@ -13,7 +13,7 @@ export default function AddNote() {
   if(!title || !description) return null ;
   const newNote = {title, description , completed:false , id: Date.now() , creatAt:new Date().toISOString()};
   dispatch({type:"add",payload:newNote})
-  onAddNewNote(newNote);
+  
     setTitle('');
     setDescription('');
 

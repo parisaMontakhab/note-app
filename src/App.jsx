@@ -42,12 +42,12 @@ export default function App() {
   //  dispatch({type:"delete",payload:item})
   // }
 
-  function handelChangedStatus(item) {
-    //const noteId = Number(e.target.value)
-   //const newStatus = notes.map((note)=>(item===note.id ? {...note,completed:!note.completed} : note));
-   //setNotes(newStatus);
-   dispatch({type:"complete",payload:item})
-  }
+  // function handelChangedStatus(item) {
+  //   //const noteId = Number(e.target.value)
+  //  //const newStatus = notes.map((note)=>(item===note.id ? {...note,completed:!note.completed} : note));
+  //  //setNotes(newStatus);
+  //  dispatch({type:"complete",payload:item})
+  // }
 
   // let sortedNotes = notes;
 
@@ -71,7 +71,7 @@ export default function App() {
           <NoteStatus />
           <NoteList
           sortBy ={sortBy}
-          setsortBy ={setSortBy}
+          
             //notes={sortedNotes}
            
           />
