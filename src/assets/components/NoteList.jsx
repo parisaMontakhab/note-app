@@ -1,7 +1,22 @@
 import { useNotes } from "../../context/NotesContext";
 
-export default function NoteList({  onDelet, onCompleted }) {
+export default function NoteList({  onDelet, onCompleted,sortBy,setsortBy }) {
   const notes = useNotes();
+
+let sortedNotes = notes;
+
+  if(sortBy === "latest"){
+    sortedNotes = [...notes].sort((a,b)=> new Date(b.creatAt) - new Date(a.creatAt));
+  }
+  if(sortBy === "earliest"){
+    sortedNotes = [...notes].sort((a,b)=> new Date(a.creatAt) - new Date(b.creatAt));
+  }
+  if(sortBy === "completed"){
+    sortedNotes = [...notes].sort((a,b)=> new Date(b.completed) - new Date(a.completed));
+  }
+
+
+
   return (
     <div className="note-list">
       {notes.map((note) => (

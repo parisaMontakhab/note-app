@@ -70,6 +70,8 @@ export default function App() {
         <div className="note-container">
           <NoteStatus />
           <NoteList
+          sortBy ={sortBy}
+          setsortBy ={setSortBy}
             //notes={sortedNotes}
             onDelet={handelRemoveNote}
             onCompleted={handelChangedStatus}
