@@ -1,12 +1,13 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 const NotesContext = createContext(null);
 const NotesDispatchContext = createContext(null);
 
 export function NotesProvider({ children }) {
+    const [notes,dispatch] = useReducer(notesReducer,[]);
   return (
-    <NotesContext.Provider>
-      <NotesDispatchContext.Provider>
+    <NotesContext.Provider value={notes}>
+      <NotesDispatchContext.Provider value={dispatch}>
         {children}
       </NotesDispatchContext.Provider>
     </NotesContext.Provider>

@@ -27,7 +27,7 @@ switch (action.type) {
 
 export default function App() {
   //const [notes, setNotes] = useState([]);
-  const [notes,dispatch] = useReducer(notesReducer,[]);
+ // const [notes,dispatch] = useReducer(notesReducer,[]);
   const [sortBy,setSortBy] = useState("latest");
 
   function addNewNote(newNote) {
