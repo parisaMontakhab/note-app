@@ -20,8 +20,8 @@ function notesReducer(state,action){
       
     }
     }
-    
 
+ 
 export function NotesProvider({ children }) {
     const [notes,dispatch] = useReducer(notesReducer,[]);
   return (

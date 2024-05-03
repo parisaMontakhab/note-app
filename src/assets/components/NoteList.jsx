@@ -1,4 +1,7 @@
-export default function NoteList({ notes, onDelet, onCompleted }) {
+import { useNotes } from "../../context/NotesContext";
+
+export default function NoteList({  onDelet, onCompleted }) {
+  const notes = useNotes();
   return (
     <div className="note-list">
       {notes.map((note) => (

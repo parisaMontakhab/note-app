@@ -49,17 +49,17 @@ export default function App() {
    dispatch({type:"complete",payload:item})
   }
 
-  let sortedNotes = notes;
+  // let sortedNotes = notes;
 
-  if(sortBy === "latest"){
-    sortedNotes = [...notes].sort((a,b)=> new Date(b.creatAt) - new Date(a.creatAt));
-  }
-  if(sortBy === "earliest"){
-    sortedNotes = [...notes].sort((a,b)=> new Date(a.creatAt) - new Date(b.creatAt));
-  }
-  if(sortBy === "completed"){
-    sortedNotes = [...notes].sort((a,b)=> new Date(b.completed) - new Date(a.completed));
-  }
+  // if(sortBy === "latest"){
+  //   sortedNotes = [...notes].sort((a,b)=> new Date(b.creatAt) - new Date(a.creatAt));
+  // }
+  // if(sortBy === "earliest"){
+  //   sortedNotes = [...notes].sort((a,b)=> new Date(a.creatAt) - new Date(b.creatAt));
+  // }
+  // if(sortBy === "completed"){
+  //   sortedNotes = [...notes].sort((a,b)=> new Date(b.completed) - new Date(a.completed));
+  // }
 
   return (
     <NotesProvider>
